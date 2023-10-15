@@ -29,8 +29,13 @@ button {
   height: 200px;
 }
 
-.galery {
+.gallery {
   display: flex;
   list-style: none;
   gap: 20px;
+}
+
+.text {
+  font-size: 8px;
+  text-align: center;
 }

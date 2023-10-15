@@ -1,3 +1,12 @@
+
+// const ul = document.querySelector(".gallery")
+// ul.classList.add("galery")
+
+// images.forEach(image => {
+//   const imgHTML = `<img class="img" src="${image.url}" alt="${image.alt}">`;
+//   ul.insertAdjacentHTML("beforeend", `<li>${imgHTML}</li>`);
+// });
+
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -13,11 +22,14 @@ const images = [
   },
 ];
 
-
-const ul = document.querySelector(".gallery")
-ul.classList.add("galery")
+const gallery = document.querySelector(".gallery")
 
 images.forEach(image => {
-  const imgHTML = `<img class="img" src="${image.url}" alt="${image.alt}">`;
-  ul.insertAdjacentHTML("beforeend", `<li>${imgHTML}</li>`);
+
+  const img = `<li><img class="img" src="${image.url}" alt="${image.alt}"></img><p class="text">${image.alt}</p></li>`;
+  gallery.insertAdjacentHTML("beforeend", img);
+
 });
+
+
+console.log(gallery);
