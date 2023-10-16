@@ -11,4 +11,3 @@ const click = 1
 increment.addEventListener("click", () => {
   counterValue.textContent = Number(counterValue.textContent) + click;
 });
-
