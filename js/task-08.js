@@ -1,21 +1,31 @@
+
 const form = document.querySelector(".login-form");
+const email = form.elements.email;
+const password = form.elements.password;
+const button = form.querySelector('button');
 
-form.addEventListener("submit", handleSubmit);
-    
-function handleSubmit(event) {
+// to avoid this alarm: [DOM] Input elements should have autocomplete attributes 
+// (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) 
+// <input type="password" name="password">​
+
+password.setAttribute("autocomplete", "current-password"); 
+email.setAttribute("autocomplete", "user-email")
+
+
+
+form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const {
-    elements: { email, password }
-  } = event.currentTarget;
-    
-    const user = email.value === "" || password.value === "" ?
-    console.log("Please fill in all the fields!") :
-    {
-      email: email.value,
-      password: password.value
-    };
-    
-    console.log(user); 
+  const userEmail = email.value;
+  const userPassword = password.value;
+  let user = {}
 
-  event.currentTarget.reset();
-}
+  userEmail === "" || userPassword === "" ?
+    alert("Please fill in all the fields!") :
+    user = {
+    email: userEmail,
+    password: userPassword
+    };
+
+});
+
+
