@@ -22,14 +22,15 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery")
+const gallery = document.querySelector(".gallery");
 
-images.forEach(image => {
+const galleryHTML = images.map(image => `
+  <li>
+    <img class="img" src="${image.url}" alt="${image.alt}">
+    <p class="text">${image.alt}</p>
+  </li>
+`).join('');
 
-  const img = `<li><img class="img" src="${image.url}" alt="${image.alt}"></img><p class="text">${image.alt}</p></li>`;
-  gallery.insertAdjacentHTML("beforeend", img);
-
-});
-
+gallery.insertAdjacentHTML("beforeend", galleryHTML);
 
 console.log(gallery);
