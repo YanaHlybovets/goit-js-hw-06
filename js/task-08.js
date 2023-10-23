@@ -25,6 +25,12 @@ form.addEventListener("submit", (event) => {
     email: userEmail,
     password: userPassword
     };
+  
+  console.log("User email:", user.email);
+  console.log("User password:", user.password);
+
+  email.value = "";
+  password.value = "";
 
 });
 
