@@ -21,16 +21,13 @@ form.addEventListener("submit", (event) => {
 
   userEmail === "" || userPassword === "" ?
     alert("Please fill in all the fields!") :
-    user = {
-    email: userEmail,
-    password: userPassword
-    };
+    console.log(user = {
+      email: userEmail,
+      password: userPassword
+    });
   
-  console.log("User email:", user.email);
-  console.log("User password:", user.password);
+  form.reset();
 
-  email.value = "";
-  password.value = "";
 
 });
 
